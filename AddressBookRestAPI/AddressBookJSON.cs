@@ -77,6 +77,13 @@ namespace AddressBookRestAPI
             var res = JsonConvert.DeserializeObject<Person>(response.Content);
             return response.IsSuccessful;
         }
+        public bool DeleteContact(int id)
+        {
+            //Passing the delete method 
+            RestRequest request = new RestRequest("/Contact/" + id, Method.DELETE);
+            IRestResponse response = client.Execute(request);
+            return response.IsSuccessful;
+        }
 
     }
 }
