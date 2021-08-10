@@ -34,5 +34,13 @@ namespace TestAddressBookAPI
             int expected = 5;
             Assert.AreEqual(expected, person.Count);
         }
+        [TestMethod]
+        public void TestUpdateEmail()
+        {
+            bool expected = true;
+            Person person = new Person { id = 3, FirstName = "Damon", LastName = "Gilbert", Address = "Disney", City = "Madurai", State = "Adol", ZipCode = "65321", PhoneNumber = "987654123", EmailId = "daomgil@gmail.com" };
+            bool actual = new AddressBookJSON().UpdateDetailInJsonServer(person);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
