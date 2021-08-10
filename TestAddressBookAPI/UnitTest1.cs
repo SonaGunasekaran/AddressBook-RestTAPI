@@ -42,5 +42,13 @@ namespace TestAddressBookAPI
             bool actual = new AddressBookJSON().UpdateDetailInJsonServer(person);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void TestDeleteEmployee()
+        {
+            bool expected = true;
+            bool actual = new AddressBookJSON().DeleteContact(3);
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
