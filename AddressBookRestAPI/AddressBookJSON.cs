@@ -50,6 +50,13 @@ namespace AddressBookRestAPI
             var res = JsonConvert.DeserializeObject<Person>(response.Content);
             Console.WriteLine("" + res.id + "Added");
         }
+        public void AddMultipleDataIntoServer(List<Person> person)
+        {
+            foreach (var p in person)
+            {
+                AddContactIntoServer(p);
+            }
+        }
 
     }
 }
